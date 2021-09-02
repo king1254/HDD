@@ -12,7 +12,7 @@
     <div class="header-area header-bg-02"
     {!! render_background_image_markup_by_attachment_id($data->image) !!}
     >
-        <div class="container">
+        <div class="container" >
             <div class="row">
                 <div class="col-lg-5">
                     <div class="header-inner padding-top-65">
@@ -79,26 +79,7 @@
     </div>
 </section>
 @endif
-@if(!empty(filter_static_option_value('home_page_key_feature_section_status',$static_field_data)))
-<div class="header-bottom-area padding-bottom-80 padding-top-80">
-    <div class="container">
-        <div class="row no-gutters">
-            @foreach($all_key_features as $key => $data)
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-header-bottom-item-02 ">
-                        <div class="icon style-0{{$key+1}}">
-                            <i class="{{$data->icon}}"></i>
-                        </div>
-                        <div class="content">
-                            <h4 class="title">{{$data->title}}</h4>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</div>
-@endif
+
 
 @if(!empty(filter_static_option_value('home_page_service_section_status',$static_field_data)))
     <section class="what-we-cover bg-image padding-top-110 padding-bottom-60"
@@ -262,85 +243,8 @@
         </div>
     </section>
 @endif
-@if(!empty(filter_static_option_value('home_page_counterup_section_status',$static_field_data)))
-    <div class="counterup-area counterup-bg padding-top-115 padding-bottom-115">
-        <div class="container">
-            <div class="row">
-                @foreach($all_counterup as $data)
-                    <div class="col-lg-3 col-md-6">
-                        <div class="singler-counterup-item-01">
-                            <div class="icon">
-                                <i class="{{$data->icon}}" aria-hidden="true"></i>
-                            </div>
-                            <div class="content">
-                                <div class="count-wrap"><span class="count-num">{{$data->number}}</span>{{$data->extra_text}}</div>
-                                <h4 class="title">{{$data->title}}</h4>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-@endif
-@if(!empty(filter_static_option_value('home_page_price_plan_section_status',$static_field_data)))
-    <section class="pricing-plan-area bg-liteblue price-inner padding-bottom-120  padding-top-110"
-    {!! render_background_image_markup_by_attachment_id(filter_static_option_value('home_page_01_price_plan_background_image',$static_field_data)) !!}
-    >
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section-title desktop-center white padding-bottom-55">
-                        <h2 class="title">{{filter_static_option_value('home_page_01_'.$user_select_lang_slug.'_price_plan_section_title',$static_field_data)}}</h2>
-                        <p>{{filter_static_option_value('home_page_01_'.$user_select_lang_slug.'_price_plan_section_description',$static_field_data)}} </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="price-plan-slider global-carousel-init"
-                         data-loop="true"
-                         data-desktopitem="3"
-                         data-mobileitem="1"
-                         data-tabletitem="2"
-                         data-nav="true"
-                         data-autoplay="true"
-                         data-margin="30"
-                    >
-                        @foreach($all_price_plan as $data)
-                            <div class="single-price-plan-01  @if(!empty($data->highlight)) style-01 active @endif">
-                                <div class="price-header">
-                                    <div class="name-box">
-                                        <h4 class="name">{{$data->title}}</h4>
-                                    </div>
-                                    <div class="price-wrap">
-                                        <span class="price">{{amount_with_currency_symbol($data->price)}}</span><span class="month">{{$data->type}}</span>
-                                    </div>
-                                </div>
-                                <div class="price-body">
-                                    <ul>
-                                        @php
-                                            $features = explode("\n",$data->features);
-                                        @endphp
-                                        @foreach($features as $item)
-                                            <li>{{$item}}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                                <div class="btn-wrapper">
-                                    @php
-                                        $url = !empty($data->url_status) ? route('frontend.plan.order',['id' => $data->id]) : $data->btn_url;
-                                    @endphp
-                                    <a href="{{$url}}" class="boxed-btn">{{$data->btn_text}}</a>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-@endif
+
+
 @if(!empty(filter_static_option_value('home_page_latest_news_section_status',$static_field_data)))
     <section class="blog-area padding-top-110 padding-bottom-120">
         <div class="container">

@@ -5923,7 +5923,8 @@ ul.wp-block-latest-posts.alignfull, ul.wp-block-latest-posts.alignwide, ul.wp-bl
     text-align: center;
     -webkit-transition: all .5s;
     -o-transition: all .5s;
-    transition: all .5s
+    transition: all .5s;
+    background: #fecb83;
 }
 
 .single-what-we-cover-item-03.border-r {

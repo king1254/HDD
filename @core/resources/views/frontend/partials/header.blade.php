@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="{{asset('assets/frontend/css/jquery.ihavecookies.css')}}">
     <link rel="stylesheet" href="{{asset('assets/frontend/css/dynamic-style.css')}}">
 
+
     @if(file_exists('assets/frontend/css/home-'.$home_page_variant.'.css'))
         <link rel="stylesheet" href="{{asset('assets/frontend/css/home-'.$home_page_variant.'.css')}}">
     @endif

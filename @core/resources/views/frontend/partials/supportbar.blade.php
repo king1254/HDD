@@ -29,7 +29,6 @@
                                         </form>
                                     </li>
                                 @else
-                                    <li><a href="{{route('user.login')}}">{{__('Login')}}</a> <span>/</span> <a href="{{route('user.register')}}">{{__('Register')}}</a></li>
                                 @endif
                                 @if(!empty(get_static_option('language_select_option')))
                                     <li>
